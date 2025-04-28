@@ -9,7 +9,12 @@ const app = express(); // Initialize Express app
 const port = process.env.PORT || 3001;
 
 // Middleware
-app.use(cors()); // Allow requests from the frontend
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000', // Allow your frontend domain
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
 app.use(express.json()); // Parse JSON request bodies
 
 // Basic route
