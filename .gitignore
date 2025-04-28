@@ -1,0 +1,22 @@
+# Dependencies
+/node_modules
+/client/node_modules
+/server/node_modules
+
+# Build directories
+/client/build
+
+# Environment variables
+.env
+.env.*
+!.env.example
+/server/.env
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db 
